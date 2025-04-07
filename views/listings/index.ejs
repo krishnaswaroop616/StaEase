@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate")%>
+
+    <body>
+        <%if(mylisting){%>
+            <h1 class="mb-4 mt-4 text-center fw-bold text-primary fs-2">Your Properties</h1>
+        <%}%>
+        <%if(!mylisting && search){%>
+            <h1 class="mb-4 mt-4 text-center  fw-bold text-primary fs-2">Based on your search</h1>
+        <%}%>
+        <%if( !mylisting && !search){%>
+            <h1 class="mb-4 mt-4 text-center  fw-bold text-primary fs-1">Explore stays</h1>
+        <%}%>
+        
+        <ul class="listing-cards">
+            <% for(const listing of allListings){%>
+                <li>
+                    <a href="/listings/<%=listing._id%>" style="text-decoration: none; color: black;">
+                        <div class="card listing-card mb-5 border-black">
+                            <img src="<%=listing.image%>" class="card-img-top" alt="listing image">
+                            <div class="card-body">
+                                <h5 class="card-title fs-6 mb-3  ">
+                                    <%=listing.title%>
+                                </h5>
+                                <h5 class="card-title fs-6 mb-3 fw-light">
+                                    location: <%=listing.location%>
+                                </h5>
+                                <p class="card-text fs-6" ><b>&#8377; <%=listing.price.toLocaleString("en-In")%> </b>/ night</p>
+                                
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <%}%>
+        </ul>
+    </body>

@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate")%>
+<div style="margin-top: 50px;">
+    <h2 class="col-6 offset-3 mb-4">Login on StaEase</h2>
+    <div class="col-6 offset-3 mt-3">
+        <form action="/login" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" placeholder="Enter username"  name="username" class="form-control" required>
+                <div class="invalid-feedback">
+                    Username is required.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" placeholder="Enter password" name="password"  class="form-control" required>
+                <div class="invalid-feedback">
+                    Password is required
+                </div>
+            </div>
+            <button class="btn btn btn-primary mb-4 mt-2 ">Login</button>
+        </form>
+        <p class="mb-5">Don't have an account? <a href="/signup">Signup here</a></p>
+    </div>
+</div>
